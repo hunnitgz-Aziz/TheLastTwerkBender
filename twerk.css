@@ -1,1 +1,26 @@
 /* CSS declarations go here */
+.twerkington {
+	float:left;
+	//margin:5%;
+	font-family:'Herculanum';
+  width: 24%;
+}
+
+.twerkington h2 {
+	font-size:16px;
+}
+.gravatar{
+  padding-top: 20%;
+  padding-left: 40%;
+}
+.twerkCharacter{
+  height: 350px;
+  width: 100%;
+}
+body{
+  background: url(/images/bg.jpg);
+}
+header{
+  width: 100%;
+  text-align:center;
+}

@@ -1,24 +1,39 @@
 <head>
   <title>twerk</title>
+  <script src="http://www.rdio.com/api/api.js?client_id=94E8U5jgPf_TUn5D1m8ZHw"></script> 
+  <script type="text/javascript">
+      R.ready(function(){
+        R.player.play({source: "p6747184"});  
+      });
+  </script>
 </head>
 
 <body>
+  <header>
+    <img src="images/last_twerkbender.png">
+  </header>
   {{> Forms}}
   {{> Players}}
 </body>
 
-<template name="Player">
-	{{#each Players}}
-		<h2>Player: {{Email}}</h2> 
-		<h2>Points: {{Points}}</h2>
+<template name="Players">
+	{{#each PlayerList}}
+	  <div class="twerkington">
+      <h2>Player: {{Email}}</h2>
+		  <h1>Points: {{Points}} <img src="{{Nation}}"></h1>
+      <div class="twerkCharacter" style=" background-image:url({{Image}});">
+        <img class="gravatar" src="{{ Gravatar}}">
+      </div>
+    </div>
 	{{else}}
 		<h2>No players!</h2>
 	{{/each}}
 </template>
 
-<template name="Form">
+<template name="Forms">
 	<form class="">
 		<input type="email" class="gravatarEmail" placeholder="Enter Gravatar email.">
-		<input type="submit" value="Submit"> 
+		<input type="submit" class="submitButton" value="Submit">
+    <button class='newGame' type="reset">New Game !</button>
 	</form>
 </template> 
