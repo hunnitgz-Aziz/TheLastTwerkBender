@@ -7,15 +7,16 @@
   {{> Players}}
 </body>
 
-<template name="Players">
-	{{#each PlayerList}}
-		<h2>{{Name}}</h2>
+<template name="Player">
+	{{#each Players}}
+		<h2>Player: {{Email}}</h2> 
+		<h2>Points: {{Points}}</h2>
 	{{else}}
 		<h2>No players!</h2>
 	{{/each}}
 </template>
 
-<template name="Forms">
+<template name="Form">
 	<form class="">
 		<input type="email" class="gravatarEmail" placeholder="Enter Gravatar email.">
 		<input type="submit" value="Submit"> 
