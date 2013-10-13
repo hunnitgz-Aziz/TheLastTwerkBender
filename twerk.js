@@ -1,15 +1,42 @@
+Players = new Meteor.Collection("players");
+hash = "";
+picUrl="";
+
+function getGravatar(email){
+  hash = $.md5(email);
+  return hash;
+}
+function makeUrl(hash){
+  var baseUrl = 'gravatar.com/avatar/';
+  var picUrl = baseUrl + hash;
+  return picUrl; 
+}
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to twerk.";
+  Template.Players.PlayerList = function(){
+    return Players.find({}, {sort:{ Name: 1 } });
   };
 
-  Template.hello.events({
-    'click input' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
+  Template.Players.events = {
+    'click .Player' : function(){
+      alert('Character is: ' + this.Name);
     }
-  });
+  };
+  Template.Players.created = function() {
+    $.shake({
+      callback: function() {
+        //Players.update({_id: id}, {$set: {Points: Points + 1}});
+        alert("shake");
+      }
+    }); 
+  };
+  Template.Forms.events = {
+    'submit': function(){
+      var inputVal = $('.gravatarEmail').val();
+      getGravatar(inputVal); 
+      console.log(hash); 
+    }
+  }
+
 }
 
 if (Meteor.isServer) {
