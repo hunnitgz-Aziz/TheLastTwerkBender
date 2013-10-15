@@ -1,13 +1,13 @@
 /* CSS declarations go here */
 .twerkington {
-	float:left;
-	//margin:5%;
-	font-family:'Herculanum';
+  float:left;
+  //margin:5%;
+  font-family:'Herculanum';
   width: 24%;
 }
 
 .twerkington h2 {
-	font-size:16px;
+  font-size:16px;
 }
 .gravatar{
   padding-top: 20%;
