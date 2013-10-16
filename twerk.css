@@ -5,7 +5,19 @@
   font-family:'Herculanum';
   width: 24%;
 }
-
+.signature{
+  font-family:'Herculanum';
+  font-size:16px;
+  margin-top:-45px;
+  text-align:center;
+}
+a{
+  color:red;
+  text-decoration: none;
+}
+a:visited{
+  color: red;
+}
 .twerkington h2 {
   font-size:16px;
 }
